@@ -72,17 +72,27 @@ function contains(item, list, cb) {
 }
 
 // Function invocation
-
 contains('Pencil', items, console.log);
 
-// function trueOrFalse(param) {
-//   return 
-// }
 
 /* STRETCH PROBLEM */
+
+let testArray = [5, 3, 2, 6, 2, 1, 3];
 
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  let newArray = [];
+  for (let i = 0; i < array.length; i++) {
+    if (!newArray.includes(array[i])) {
+        newArray.push(array[i]);
+    }
+  }
+  cb(newArray);
 }
+
+removeDuplicates(testArray, (array2) => console.log(array2));
+
+// Loop through array
+// compare item in array

@@ -60,10 +60,10 @@ function multiplyNums(x, y, cb) {
 // Function invocation
 multiplyNums(4, 6, product => console.log(product));
 
+
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-  let result;
   if (list.includes(item)) {
     return cb(true);
   } else {
@@ -72,7 +72,9 @@ function contains(item, list, cb) {
 }
 
 // Function invocation
-contains('Pencil', items, console.log);
+
+contains('Pencil', items, input => console.log(input));
+contains('Eraser', items, input => console.log(input));
 
 
 /* STRETCH PROBLEM */
@@ -92,7 +94,8 @@ function removeDuplicates(array, cb) {
   cb(newArray);
 }
 
-removeDuplicates(testArray, (array2) => console.log(array2));
+function logsArray(input) {
+  console.log(input);
+}
 
-// Loop through array
-// compare item in array
+removeDuplicates(testArray, logsArray);
